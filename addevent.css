@@ -12,17 +12,21 @@ body {
     color: #DBEDF3;
     font-family: sans-serif;
    }
+   .pressed {
+    box-shadow: 0 3px 4px 0 #DBEDF3;
+    opacity: 0.5;
+  }
 
-   .cat {
+   .c {
     background-image: url("cat.png");
    }
-   .puppy {
+   .p {
     background-image: url("puppy.png");
    }
-   .bee {
+   .b {
     background-image: url("bee.png");
    }
-   .monkey {
+   .m {
     background-image: url("monkey.png");
    }
    .animal {
@@ -37,8 +41,7 @@ body {
     font-family: 'Roboto', cursive;
     font-weight: 900;
     line-height: 5;
-    color: #614105;
-    text-shadow: 3px 0 #edf107;
+    color: transparent;
     display: inline-block;
     width: 500px;
     height: 500px;

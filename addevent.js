@@ -3,32 +3,54 @@ var numberOfAnimalButtons = document.querySelectorAll(".animal").length;
 for (var i = 0; i <numberOfAnimalButtons; i++) {
     
     document.querySelectorAll(".animal")[i].addEventListener("click", function() {
-        
-        var buttons = this.innerText;
 
-        switch (buttons) {
-            case "cat":
+
+        var buttons = this.innerText;
+        buttonAnimation(buttons)
+        playSound(buttons)
+    });
+}
+    document.addEventListener("keydown",function(e){
+        buttonAnimation(e.key)
+        playSound(e.key)
+    })
+
+
+        function playSound(key) {
+        switch (key) {
+            case "c":
                 var cat = new Audio ("cat.mp3")
                 cat.play();
                 break;
-            case "puppy":
-                var puppy = new Audio ("puppy.mp3")
+            case "p":
+                 var puppy = new Audio ("puppy.mp3")
                 puppy.play();
                 break;
-            case "bee":
+            case "b":
                 var bee = new Audio ("bee.mp3")
                 bee.play();
                 break;
-            case "monkey":
+            case "m":
                 var monkey = new Audio ("monkey.mp3")
                 monkey.play();
                 break;
-            default:
+            default: console.log(key);
                 break;
         }
+    }
 
-});
-}
+    function buttonAnimation(currentKey) {
+        var activeButton = document.querySelector("." + currentKey);
+        console.log(activeButton)
+
+        activeButton.classList.add("pressed");
+
+        setTimeout(function() {
+            activeButton.classList.remove("pressed");
+        }, 100);
+       }
+
+
 
 // function teacher (name, age, years_experience, subject, grade, hobbies) {
 //     this.name = name;
